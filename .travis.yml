@@ -8,14 +8,13 @@ python:
 env:
   global:
     - PIPENV_VENV_IN_PROJECT=1
-    - PIPENV_IGNORE_VERTUALENVS=1
+    - PIPENV_IGNORE_VIRTUALENV=1
 
 install:
-  - pip intall pipenv
+  - pip install pipenv
   - pipenv sync -d
   - cp contrib/env-sample .env
 
 script:
   - pipenv run flake8 .
   - pipenv run pytest --cov=pypro
-  -
