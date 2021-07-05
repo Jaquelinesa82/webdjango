@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'Collectfast',
+    'collectfast',
     'django.contrib.staticfiles',
     'devpro',
 ]
