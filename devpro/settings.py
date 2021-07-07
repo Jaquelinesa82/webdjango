@@ -77,16 +77,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'devpro.wsgi.application'
 
 
+# Configuração Django Debug Toolbar
+INTERNAL_IPS = config('INTERNAL_IPS', cast=Csv(), default='127.0.0.1')
+
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+
+
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 default_db_url = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 parse_database = partial(dj_database_url.parse, conn_max_age=600)
 
 DATABASES = {
-    'default': config('DATABASE_URL',
-                      default=default_db_url, cast=parse_database)
+    'default': config('DATABASE_URL', default=default_db_url, cast=parse_database)
 }
 
 

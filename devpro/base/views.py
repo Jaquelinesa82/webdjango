@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('EM MANUTENÇÃO...')
+    return HttpResponse('<html><body>EM MANUTENÇÃO</body></html>')
