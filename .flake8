@@ -1,3 +1,4 @@
 [flake8]
-max-line-lenght=120
-exclude=.venv
+ignore = E226,E302,E41
+max-line-length = 160
+exclude = .venv, tests/*, *migrations*
