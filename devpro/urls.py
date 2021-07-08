@@ -16,13 +16,13 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from devpro.base import views
+from devpro.base.views import home
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', home),
 ]
 
 if settings.DEBUG:
