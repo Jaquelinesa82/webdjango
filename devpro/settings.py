@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'collectfast',
     'django.contrib.staticfiles',
-    'devpro.base.apps.BaseConfig',
+    'devpro.base',
+    'devpro.aperitivos',
 ]
 
 MIDDLEWARE = [
