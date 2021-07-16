@@ -5,7 +5,7 @@ from devpro.django_assertions import assert_contains
 
 @pytest.fixture
 def resp(client):
-    return client.get(reverse('aperitivos: video', args=('motivacao',)))
+    return client.get(reverse('aperitivos:video', args=('motivacao',)))
 
 
 def test_status_code(resp):
@@ -17,4 +17,4 @@ def test_titulo_video(resp):
 
 
 def test_conteudo_video(resp):
-    assert_contains(resp, f'<iframe src="https://www.youtube.com/embed/123215"')
+    assert_contains(resp, f'<iframe src="https://www.youtube.com/embed/9iZLDnW_vwU"')
