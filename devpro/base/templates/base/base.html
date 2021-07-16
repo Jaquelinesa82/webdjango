@@ -30,29 +30,7 @@
 </nav>
 
 {% block body %}{% endblock body %}
+{% include 'base/footer.html' with contato_email='jaquelinesa.82@gmail.com' only %}
 
-<footer class="main-footer mt-5 pt-4 ">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3>Entre em contato</h3>
-                <address>
-                    +55 61 98503-5430
-                    <br/>
-                    <a href="mailto:jaquelinesa.82@gmail.com" class="">jaquelinesa.82@gmail.com</a>
-                </address>
-            </div>
-        </div>
-    </div>
-    <div class="rights pb-4">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    {% now 'Y' %} DevPro. Todos os direitos reservados.
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 </body>
 </html>
