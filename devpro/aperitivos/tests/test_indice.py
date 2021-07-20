@@ -5,7 +5,7 @@ from devpro.django_assertions import assert_contains
 
 @pytest.fixture
 def resp(client):
-    return client.get(reverse('aperitivos: indice'))
+    return client.get(reverse('aperitivos:indice'))
 
 
 def test_status_code(resp):
@@ -15,7 +15,7 @@ def test_status_code(resp):
 @pytest.mark.parametrize(
     'titulo',
     [
-        'Motivação',
+        'Video Aperitivo: Motivação',
         'Instalação'
     ]
 )
