@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'devpro.base',
     'devpro.aperitivos',
     'devpro.modulos',
+    'ordered_model',
 ]
 
 MIDDLEWARE = [

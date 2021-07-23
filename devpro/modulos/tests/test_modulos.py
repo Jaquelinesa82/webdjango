@@ -17,5 +17,5 @@ def resp(client, modulos):
     return resp
 
 
-def test_modulos(resp, modulos):
+def test_aba_modulos(resp, modulos):
     assert_contains(resp, modulos.titulo)
