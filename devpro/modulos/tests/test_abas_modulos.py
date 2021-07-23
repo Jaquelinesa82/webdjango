@@ -17,5 +17,11 @@ def resp(client, modulos):
     return resp
 
 
-def test_aba_modulos(resp, modulos):
-    assert_contains(resp, modulos.titulo)
+def test_titulos_dos_modulos(resp, modulos):
+    for modulo in modulos:
+         assert_contains(resp, modulos.titulo)
+
+
+def test_link_dos_modulos(resp, modulos):
+    for modulo in modulos:
+         assert_contains(resp, modulos.get_absolute_url())
