@@ -26,3 +26,7 @@ def test_titulo(resp, aula: Aula):
     assert_contains(resp, aula.titulo)
 
 
+def test_youtube(resp, aula: Aula):
+    assert_contains(resp, f'src="https://www.youtube.com/embed/{ aula.youtube_id }"')
+
+
