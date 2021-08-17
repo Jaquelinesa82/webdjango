@@ -1,4 +1,4 @@
-from devpro.modulos.models import Modulo
+from devpro.modulos.models import Modulo, Aula
 from typing import List
 
 
@@ -16,3 +16,7 @@ def encontrar_modulos(slug: str) -> Modulo:
 
 def listar_aulas_de_modulos_ordenados(modulo: Modulo):
     return list(modulo.aula_set.order_by('order').all())
+
+
+def encontrar_aula(slug):
+    return Aula.objects.get(slug=slug)
