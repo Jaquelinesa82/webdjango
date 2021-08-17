@@ -3,21 +3,21 @@ from devpro.django_assertions import assert_contains
 import pytest
 from model_bakery import baker
 
-from devpro.modulos.models import Modulo
+from devpro.modulos.models import Modulo, Aula
 
 
-@pytest.fixture()
+@pytest.fixture
 def modulo(db):
     return baker.make(Modulo)
 
 
-@pytest.fixture()
+@pytest.fixture
 def aulas(modulo):
-    return baker.make(aula, 3, modulo=modulo)
+    return baker.make(Aula, 3, modulo=modulo)
 
 
 @pytest.fixture
-def resp(client, modulos, aulas):
+def resp(client, modulo, aulas):
     resp = client.get(reverse('modulos:detalhe', kwargs={'slug': modulo.slug}))
     return resp
 
@@ -35,4 +35,10 @@ def test_publico(resp, modulo: Modulo):
 
 
 def test_aulas_titulos(resp, aulas):
-    assert_contains(resp, aula.titulo)
+    for aula in aulas:
+        assert_contains(resp, aula.titulo)
+
+
+def test_aulas_links(resp, aulas):
+    for aula in aulas:
+        assert_contains(resp, aula.get_absolute_url())
