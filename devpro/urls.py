@@ -21,6 +21,7 @@ urlpatterns = [
     path('', include('devpro.base.urls')),
     path('aperitivos/', include('devpro.aperitivos.urls')),
     path('modulos/', include('devpro.modulos.urls')),
+    path('turmas/', include('devpro.turmas.urls')),
 ]
 
 if settings.DEBUG:
